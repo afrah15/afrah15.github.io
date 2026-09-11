@@ -1,0 +1,12 @@
+---
+title: "About"
+---
+
+##  Background 
+I have a background in Computer Science and worked at Salesforce before starting the MDS program. I spent the last couple of years working with Tableau and CRM Analytics, where I worked on data visualization, customer enablement, and helping customers get more value from their data and analytics products.
+
+## Why data science?
+I decided to pursue data science because I wanted to go beyond using data for reporting and visualization and develop a stronger foundation in statistics, machine learning, and data-driven problem solving. I’m hoping the MDS will help me connect my industry experience with deeper technical and analytical skills and eventually explore roles in data science, analytics, and product.
+
+## Outside of data science: 
+Outside of data science, I enjoy staying active, exploring new places, trying different foods, listening to music, and spending time with friends. Since moving to Vancouver, I’m also looking forward to exploring the city, trying new restaurants and cafés, and getting outdoors whenever I can. I’m excited to meet everyone and learn from all of you!
