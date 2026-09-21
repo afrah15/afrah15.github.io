@@ -2,6 +2,5 @@
 title: "Afrah Zilani"
 ---
 ![](images/afrah.jpg){width=200px}
-This is a Quarto website.
+This is a Afrah's website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.

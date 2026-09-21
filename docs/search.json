@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Afrah Zilani",
+    "section": "",
+    "text": "This is a Afrah’s website."
+  },
+  {
+    "objectID": "posts/first-weeks/index.html",
+    "href": "posts/first-weeks/index.html",
+    "title": "My first weeks in MDS",
+    "section": "",
+    "text": "Orientation day on campus."
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -26,33 +40,5 @@
     "title": "About",
     "section": "Outside of data science:",
     "text": "Outside of data science:\nOutside of data science, I enjoy staying active, exploring new places, trying different foods, listening to music, and spending time with friends. Since moving to Vancouver, I’m also looking forward to exploring the city, trying new restaurants and cafés, and getting outdoors whenever I can. I’m excited to meet everyone and learn from all of you!"
-  },
-  {
-    "objectID": "posts/first-weeks/index.html",
-    "href": "posts/first-weeks/index.html",
-    "title": "My first weeks in MDS",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
-  },
-  {
-    "objectID": "posts/first-weeks/index.html#quarto",
-    "href": "posts/first-weeks/index.html#quarto",
-    "title": "My first weeks in MDS",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
-  },
-  {
-    "objectID": "posts/first-weeks/index.html#running-code",
-    "href": "posts/first-weeks/index.html#running-code",
-    "title": "My first weeks in MDS",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Afrah Zilani",
-    "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   }
 ]
