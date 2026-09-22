@@ -1,7 +1,7 @@
-/.quarto/
 .quarto/
 _site/
 .DS_Store
 .venv/
+renv/library/
+/.quarto/
 **/*.quarto_ipynb
-
