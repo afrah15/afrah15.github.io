@@ -79,3 +79,12 @@ Once the rendering process completes:
 - **Data Source:** Both computational posts utilize the [Palmer Penguins Dataset](https://allisonhorst.github.io/palmerpenguins/?utm_source=gemini), collected by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER. Distributed under the [CC0 1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/?utm_source=gemini).
 
 - **Network Requirements:** **No network access is required** during the build/render phase. The dataset is bundled directly inside the installed R and Python package dependencies (`palmerpenguins`), which are brought in locally during `uv sync` and `renv::restore()`.
+
+  ### How to Test It Yourself (As Required by Step 6)
+
+  To double check that everything is 100% complete, test your own README by running these commands in your terminal:
+
+  ```{bash}
+  git clone git@github.com:afrah15/afrah15.github.io.git ~/tmp/m3-test
+  cd ~/tmp/m3-test
+  ```
