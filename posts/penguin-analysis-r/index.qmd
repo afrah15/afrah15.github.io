@@ -10,10 +10,12 @@ This analysis explores physical measurements of penguin species observed at the 
 
 Data: \[Palmer Penguins\](https://allisonhorst.github.io/palmerpenguins/), Palmer Station Antarctica LTER. The dataset is distributed under the \[CC0 1.0 Universal License\](https://creativecommons.org/publicdomain/zero/1.0/).
 
-```{r}
-#| label: setup
+```{r setup}
 #| message: false
 #| warning: false
+
+library(ggplot2)
+library(dplyr)
 ```
 
 ## Running Code

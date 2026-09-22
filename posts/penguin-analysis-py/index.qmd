@@ -15,8 +15,9 @@ This report analyzes physical attributes of three penguin species—Adélie, Chi
 Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/) collected by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER. Distributed under the [CC0 1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ```{python}
-#| label: setup 
-#| message: false 
+
+#| label: setup
+#| message: false
 #| warning: false
 
 import sys 
