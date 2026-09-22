@@ -1,0 +1,82 @@
+---
+title: "Palmer Penguins Using R"
+author: "Afrah Z"
+date: 2026-09-21
+execute:
+  echo: true
+---
+
+This analysis explores physical measurements of penguin species observed at the Palmer Station in Antarctica. We examine how body mass, bill dimensions, and flipper length vary across three species: Adélie, Chinstrap, and Gentoo.
+
+Data: \[Palmer Penguins\](https://allisonhorst.github.io/palmerpenguins/), Palmer Station Antarctica LTER. The dataset is distributed under the \[CC0 1.0 Universal License\](https://creativecommons.org/publicdomain/zero/1.0/).
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+```
+
+## Running Code
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+```{r}
+# Clean dataset by removing missing values for analysis
+penguins_clean <- penguins |> 
+  drop_na(species, body_mass_g, bill_length_mm, flipper_length_mm)
+
+```
+
+```{r}
+#| label: summary-table
+
+penguins_clean |> 
+  group_by(species) |> 
+  summarise(
+    count = n(),
+    mean_body_mass_g = round(mean(body_mass_g), 1),
+    mean_bill_length_mm = round(mean(bill_length_mm), 1),
+    mean_flipper_length_mm = round(mean(flipper_length_mm), 1)
+  ) |> 
+  knitr::kable(
+    col.names = c("Species", "Sample Size", "Mean Mass (g)", "Mean Bill Length (mm)", "Mean Flipper Length (mm)")
+  )
+```
+
+```{r}
+#| label: body-mass-distribution
+
+penguins_clean |> 
+  ggplot(aes(x = species, y = body_mass_g, fill = species)) +
+  geom_boxplot(alpha = 0.7, show.legend = FALSE) +
+  scale_fill_brewer(palette = "Set2") +
+  labs(
+    x = "Species",
+    y = "Body Mass (g)"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+#| label: fig-penguin-mass
+#| fig-cap: "Body mass vs. flipper length across Antarctic penguin species."
+
+ggplot(penguins_clean, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  geom_point(alpha = 0.8, size = 2.5) +
+  scale_color_brewer(palette = "Set2") +
+  labs(
+    x = "Flipper Length (mm)",
+    y = "Body Mass (g)",
+    color = "Species"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+
+renv::snapshot()
+
+```

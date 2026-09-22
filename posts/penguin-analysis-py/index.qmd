@@ -1,0 +1,108 @@
+---
+title: "Morphological Analysis of Palmer Archipelago Penguins"
+
+author: "Afrah"
+
+date: "2026-09-21"
+execute:
+  echo: true
+---
+
+## Introduction
+
+This report analyzes physical attributes of three penguin species—Adélie, Chinstrap, and Gentoo—collected at Palmer Station, Antarctica. We examine species-level variations in body mass, bill dimensions, and flipper length using Python.
+
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/) collected by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER. Distributed under the [CC0 1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/).
+
+```{python}
+#| label: setup 
+#| message: false 
+#| warning: false
+
+import sys 
+import pandas as pd 
+import seaborn as sns 
+import matplotlib.pyplot as plt
+from palmerpenguins import load_penguins
+
+import sys
+
+import pandas as pd
+
+import seaborn as sns
+
+import matplotlib.pyplot as plt
+
+from palmerpenguins import load_penguins
+
+# Verify environment execution path
+
+print(f"Executing Python from: {sys.executable}")
+
+# Load and clean dataset
+
+penguins = load_penguins().dropna(subset=["species", "body_mass_g", "bill_length_mm", "flipper_length_mm"])
+```
+
+```{python}
+#| label: summary-table
+
+summary_df = penguins.groupby("species").agg(
+    sample_size=("species", "size"),
+    mean_body_mass_g=("body_mass_g", "mean"),
+    mean_bill_length_mm=("bill_length_mm", "mean"),
+    mean_flipper_length_mm=("flipper_length_mm", "mean")
+).round(1).reset_index()
+
+summary_df.columns = [
+    "Species", "Sample Size", "Mean Mass (g)", 
+    "Mean Bill Length (mm)", "Mean Flipper Length (mm)"
+]
+
+summary_df
+```
+
+```{python}
+#| label: body-mass-boxplot
+
+plt.figure(figsize=(8, 5))
+sns.boxplot(
+    data=penguins,
+    x="species",
+    y="body_mass_g",
+    hue="species",
+    palette="Set2",
+    legend=False
+)
+plt.xlabel("Species")
+plt.ylabel("Body Mass (g)")
+plt.title("Body Mass Distribution Across Species")
+plt.grid(True, linestyle="--", alpha=0.3)
+plt.show()
+```
+
+```{python}
+#| label: fig-flipper-mass
+#| fig-cap: "Scatter plot showing the relationship between flipper length and body mass across Antarctic penguin species."
+
+plt.figure(figsize=(8, 5))
+sns.scatterplot(
+    data=penguins,
+    x="flipper_length_mm",
+    y="body_mass_g",
+    hue="species",
+    palette="Set2",
+    s=60,
+    alpha=0.8
+)
+plt.xlabel("Flipper Length (mm)")
+plt.ylabel("Body Mass (g)")
+plt.title("Flipper Length vs. Body Mass")
+plt.legend(title="Species")
+plt.grid(True, linestyle="--", alpha=0.5)
+plt.show()
+```
+
+## Conclusion
+
+The scatter plot demonstrates a strong positive correlation between flipper length and body mass. Gentoo penguins form a distinct group in the top-right corner, reflecting their distinctly larger physical build compared to the Adélie and Chinstrap species.
